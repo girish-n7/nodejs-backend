@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-//specify the url
+//specify the api url
 let url = "https://fakestoreapi.com/products";
 
 //get users data
