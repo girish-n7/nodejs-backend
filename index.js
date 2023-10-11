@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 //specify the url
-let url = "https://jsonplaceholder.typicode.com/users";
+let url = "https://fakestoreapi.com/products";
 
 //get users data
 app.get("/", (req, res) => {
