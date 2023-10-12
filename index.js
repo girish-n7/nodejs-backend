@@ -3,21 +3,17 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); //bodyparser alternative (is inbuilt with express)
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-//specify the api url
-let url = "https://fakestoreapi.com/products";
-
-//get users data
 app.get("/", (req, res) => {
-  //use fetch() to call api
+  // use fetch reuest to call the api
 
-  fetch(url)
+  fetch("https://fakestoreapi.com/products")
     .then((response) => response.json())
     .then((result) => res.json(result))
-    .catch((err) => console.error(err)); //error
+    .catch((err) => console.error("Error: " + err)); //error
 });
 
 app.listen(3000, () => console.log("Server is running"));
